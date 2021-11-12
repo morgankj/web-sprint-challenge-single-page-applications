@@ -6,7 +6,6 @@ import formSchema from './validation/formSchema';
 
 import HomeContent from './components/HomeContent';
 import PizzaForm from './components/PizzaForm';
-import PizzaConfirmation from './components/PizzaConfirmation';
 
 const initialFormValues = {
   name: '',
@@ -33,14 +32,6 @@ const App = () => {
   const [disabled, setDisabled] = useState(initialDisabled);
   const [orders, setOrders] = useState(initialOrders);
 
-  const getOrders = async () => {
-    axios.get('https://reqres.in/api/orders')
-      .then(res => {
-        setOrders(res.data.data);
-      })
-      .catch(err => console.error(err))
-  }
-
   const postNewOrder = newOrder => {
     axios.post('https://reqres.in/api/orders', newOrder)
       .then(res => {
@@ -53,7 +44,8 @@ const App = () => {
   }
 
   const validate = (name, value) => {
-    yup.reach(formSchema, name).validate(value)
+    yup.reach(formSchema, name)
+      .validate(value)
       .then(() => setFormErrors({ ...formErrors, [name]: ''}))
       .catch(err => setFormErrors({ ...formErrors, [name]: err.errors[0]}))
   }
@@ -74,10 +66,6 @@ const App = () => {
   }
 
   useEffect(() => {
-    getOrders()
-  }, [])
-
-  useEffect(() => {
     formSchema.isValid(formValues)
       .then(valid => setDisabled(!valid));
   }, [formValues])
@@ -88,14 +76,11 @@ const App = () => {
         <h1>Lambda Eats</h1>
         <nav>
           <Link to="/">Home</Link>
-          <Link to="/help">Help</Link>
+          <Link to="/pizza">Order Pizza</Link>
         </nav>
       </header>
 
       <Switch>
-        <Route path="/pizza-confirmation">
-          <PizzaConfirmation />
-        </Route>
         <Route path="/pizza">
           <PizzaForm
             formValues={formValues} 
