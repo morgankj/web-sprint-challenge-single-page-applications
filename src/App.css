@@ -38,7 +38,7 @@ nav a:hover, .homeContent a:hover {
   border-radius: 0px 5px 5px 0px;
 }
 
-header {
+header, .formHeader {
   background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-cpk-julia-2-1533651476.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -53,7 +53,7 @@ header {
   flex-direction: column;
 }
 
-.homeContent header p {
+.homeContent header p, .formHeader h2 {
   color: white;
   font-weight: bold;
   font-size: 3rem;
@@ -147,4 +147,28 @@ header {
 
 .place .about {
   font-size: 1.3rem;
+}
+
+.formHeader {
+  background-image: url('https://www.renfrewpizzaria.com/wp-content/uploads/2020/12/Renfrew-Pizzaria-homepage-slider_1.jpg');
+}
+
+.formHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.toppings {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin: 2%;
+}
+
+.errors div {
+  color: red;
+  font-weight: bold;
+  font-size: 2rem;
 }
