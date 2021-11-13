@@ -2,37 +2,149 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 1% 2%;
+}
+
+h1 {
+  color: red;
+  font-size: 3rem;
+}
+
+nav {
+  width: 20%;
+}
+
+nav a, .homeContent a {
   color: white;
+  background-color: red;
+  padding: 2% 4%;
+  margin: 1%;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+nav a:hover, .homeContent a:hover {
+  background-color: rgb(119, 18, 18);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#homeButton {
+  border-radius: 5px 0px 0px 5px;
+}
+
+#pizzaButton {
+  border-radius: 0px 5px 5px 0px;
+}
+
+header {
+  background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-cpk-julia-2-1533651476.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 70vh;
+}
+
+.homeContent header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.homeContent header p {
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px #190000;
+}
+
+.homeContent a {
+  color: white;
+  background-color: red;
+  padding: .5% 1%;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.homeContent a:hover {
+  box-shadow: 2px 2px 4px #25000048;;
+}
+
+.itemList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 2% 0;
+}
+
+.place {
+  width: 27%;
+  margin-bottom: 2%;
+  text-align: left;
+  border: solid grey 1px;
+  padding: 1%;
+}
+
+#listTagline {
+  margin-top: 2%;
+  margin-right: 70%;
+}
+
+.pic {
+  height: 25vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#mcpic {
+  background-image: url('./images/mcdonalds.jpeg');
+}
+
+#sgpic {
+  background-image: url('./images/sweetgreen.jpeg');
+}
+
+#dunkpic {
+  background-image: url('./images/dunkin.png');
+}
+
+#chipic {
+  background-image: url('./images/chipotle.jpeg');
+}
+
+#tbpic {
+  background-image: url('./images/tacobell.jpeg');
+}
+
+#canespic {
+  background-image: url('./images/canes.jpeg');
+}
+
+.place .tags {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.place .tags p {
+  background-color: grey;
+  color: white;
+  padding: 1% 3%;
+  border-radius: 5px;
+  margin: 02% 1%;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.restName {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 2;
+}
+
+.place .about {
+  font-size: 1.3rem;
 }

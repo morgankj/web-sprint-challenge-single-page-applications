@@ -3,6 +3,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import axios from "axios";
 import * as yup from 'yup';
 import formSchema from './validation/formSchema';
+import './App.css';
 
 import HomeContent from './components/HomeContent';
 import PizzaForm from './components/PizzaForm';
@@ -72,13 +73,13 @@ const App = () => {
 
   return (
     <div className="App">
-      <header>
+      <div className="navbar">
         <h1>Lambda Eats</h1>
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="/pizza">Order Pizza</Link>
+          <Link to="/" id="homeButton">Home</Link>
+          <Link to="/pizza" id="pizzaButton">Order Pizza</Link>
         </nav>
-      </header>
+      </div>
 
       <Switch>
         <Route path="/pizza">
